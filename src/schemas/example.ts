@@ -1,4 +1,4 @@
-import type { TypeOf } from 'yup';
+import type { InferType } from 'yup';
 import * as yup from "yup";
 
 
@@ -21,6 +21,6 @@ export const schema = yup.object({
   friends: yup.array().of(friendSchema).default([])
 })
 
-export interface IFriendSchema extends TypeOf<typeof friendSchema> { }
+export interface IFriendSchema extends InferType<typeof friendSchema> { }
 
-export interface ISchema extends TypeOf<typeof schema> { }
+export interface ISchema extends InferType<typeof schema> { }
